@@ -1,0 +1,21 @@
+{
+  "short_name": "IU Al-Fiqh",
+  "name": "Department of Al-Fiqh and Law, Islamic University",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/192/university.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://img.icons8.com/color/512/university.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#006a4e",
+  "theme_color": "#006a4e",
+  "display": "standalone",
+  "orientation": "portrait"
+}

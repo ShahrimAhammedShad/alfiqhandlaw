@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department of Al-Fiqh and Law - Islamic University, Bangladesh</title>
+  <meta name="description" content="Official website of the Department of Al-Fiqh & Law, Faculty of Law, Islamic University, Kushtia, Bangladesh. Comprehensive educational platform for legal studies.">
+  
+  <!-- CSS Library & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            iuGreen: {
+              DEFAULT: '#006a4e',
+              dark: '#004d39',
+              light: '#0a805f'
+            },
+            iuGold: {
+              DEFAULT: '#d4af37',
+              dark: '#aa8c2c',
+              light: '#f3e5ab'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <!-- Chart.js & GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 antialiased font-sans flex flex-col min-h-screen">
+
+  <!-- EMERGENCY BROADCAST BANNER -->
+  <div class="bg-amber-600 text-white text-center py-2 px-4 text-sm font-medium z-50 flex justify-between items-center" id="emergencyBanner">
+    <span><i class="fa-solid fa-bullhorn mr-2 animate-bounce"></i> Admission Test Schedule Session 2026/27 announced. Download online.</span>
+    <button onclick="document.getElementById('emergencyBanner').style.display='none'" class="text-white hover:text-gray-200"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+  <!-- STICKY GLASSMORPHIC HEADER -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo Branding -->
+      <a href="#" onclick="switchView('home')" class="flex items-center gap-3">
+        <div class="relative flex items-center justify-center bg-white p-1.5 rounded-full shadow-inner border border-iuGold/40 w-12 h-12">
+          <!-- Official logo or clean seal symbol representing Islamic University, Kushtia -->
+          <img src="https://img.icons8.com/color/48/university.png" alt="Islamic University Logo" class="w-10 h-10 object-contain">
+        </div>
+        <div>
+          <span class="block text-xs uppercase font-extrabold tracking-widest text-iuGold-dark dark:text-iuGold">Faculty of Law</span>
+          <span class="block font-bold text-lg md:text-xl text-iuGreen font-serif tracking-tight">Dept. of Al-Fiqh & Law</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400">Islamic University, Kushtia-Jhenaidah</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden xl:flex items-center space-x-6 text-sm font-semibold text-slate-700 dark:text-slate-200">
+        <a href="#" onclick="switchView('home')" class="hover:text-iuGreen dark:hover:text-iuGold transition">Home</a>
+        <div class="relative group">
+          <button class="hover:text-iuGreen dark:hover:text-iuGold transition flex items-center gap-1 py-4">
+            About <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
+          <div class="absolute top-full left-0 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-xl rounded-lg py-2 w-56 hidden group-hover:block transition-all animate-fade-in">
+            <a href="#about" class="block px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700">Department Overview</a>
+            <a href="#history" class="block px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700">History & Timeline</a>
+            <a href="#vision" class="block px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700">Mission & Vision</a>
+          </div>
+        </div>
+        <a href="#academics" class="hover:text-iuGreen dark:hover:text-iuGold transition">Academic Programs</a>
+        <a href="#faculty" class="hover:text-iuGreen dark:hover:text-iuGold transition">Faculty</a>
+        <a href="#notices" class="hover:text-iuGreen dark:hover:text-iuGold transition">Notices</a>
+        <a href="#activities" class="hover:text-iuGreen dark:hover:text-iuGold transition">Clubs & Facilities</a>
+        
+        <!-- Quick Switch Portals -->
+        <div class="relative group">
+          <button class="bg-iuGreen text-white px-4 py-2 rounded-lg text-xs font-bold shadow-md hover:bg-iuGreen-light transition flex items-center gap-1.5">
+            <i class="fa-solid fa-user-shield"></i> Portals <i class="fa-solid fa-chevron-down text-[9px]"></i>
+          </button>
+          <div class="absolute right-0 top-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-2xl rounded-xl py-3 w-64 hidden group-hover:block transition-all">
+            <span class="block px-4 py-1 text-[10px] text-slate-400 font-bold uppercase tracking-wider">Academic Portals</span>
+            <hr class="border-slate-100 dark:border-slate-700 my-1">
+            <a href="#" onclick="switchView('student')" class="flex items-center gap-2.5 px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-user-graduate text-iuGreen text-sm"></i> Student Dashboard</a>
+            <a href="#" onclick="switchView('faculty')" class="flex items-center gap-2.5 px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-chalkboard-user text-iuGold-dark text-sm"></i> Faculty Portal</a>
+            <a href="#" onclick="switchView('alumni')" class="flex items-center gap-2.5 px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-graduation-cap text-indigo-500 text-sm"></i> Alumni Portal</a>
+            <hr class="border-slate-100 dark:border-slate-700 my-1">
+            <a href="#" onclick="switchView('admin')" class="flex items-center gap-2.5 px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-gears text-red-500 text-sm"></i> Super Admin Control</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Utility Options (Dark Mode, Language, Global Search, Menu Toggle) -->
+      <div class="flex items-center gap-4">
+        <!-- Search Trigger -->
+        <button onclick="toggleSearch()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition" title="Global Search (Ctrl+K)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Dark Mode Toggle -->
+        <button onclick="toggleDarkMode()" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition" title="Toggle Theme">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <!-- Multi-Lang Toggle -->
+        <button onclick="toggleLanguage()" class="hidden md:flex items-center gap-1 px-2.5 py-1 text-xs border border-slate-300 dark:border-slate-600 rounded-md font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <span id="langLabel">বাংলা</span>
+        </button>
+        <!-- Hamburger Menu -->
+        <button class="xl:hidden p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full" onclick="toggleMobileNav()">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobileNav" class="hidden xl:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-4 space-y-3">
+      <a href="#" onclick="switchView('home'); toggleMobileNav()" class="block font-medium hover:text-iuGreen">Home</a>
+      <hr class="border-slate-100 dark:border-slate-800">
+      <span class="block text-xs font-bold uppercase text-slate-400">Dashboards</span>
+      <a href="#" onclick="switchView('student'); toggleMobileNav()" class="block font-medium hover:text-iuGreen pl-2"><i class="fa-solid fa-user-graduate mr-2 text-iuGreen"></i>Student Dashboard</a>
+      <a href="#" onclick="switchView('faculty'); toggleMobileNav()" class="block font-medium hover:text-iuGreen pl-2"><i class="fa-solid fa-chalkboard-user mr-2 text-iuGold"></i>Faculty Portal</a>
+      <a href="#" onclick="switchView('alumni'); toggleMobileNav()" class="block font-medium hover:text-iuGreen pl-2"><i class="fa-solid fa-graduation-cap mr-2 text-indigo-500"></i>Alumni Portal</a>
+      <a href="#" onclick="switchView('admin'); toggleMobileNav()" class="block font-medium hover:text-iuGreen pl-2"><i class="fa-solid fa-gears mr-2 text-red-500"></i>Super Admin Control</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (ROUTER CONTROLLED) -->
+  <main class="flex-grow">
+
+    <!-- ==================== VIEW: PUBLIC HOMEPAGE ==================== -->
+    <div id="view-home" class="view-panel space-y-16">
+      
+      <!-- HERO BANNER -->
+      <section class="relative bg-gradient-to-r from-slate-950 via-slate-900 to-iuGreen-dark text-white min-h-[500px] md:min-h-[650px] flex items-center overflow-hidden">
+        <!-- Geometric Accents -->
+        <div class="absolute inset-0 opacity-20">
+          <div class="absolute top-10 right-1/4 w-96 h-96 bg-iuGold rounded-full blur-3xl"></div>
+          <div class="absolute bottom-10 left-1/3 w-[500px] h-[500px] bg-iuGreen-light rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-xs font-semibold text-iuGold">
+              <i class="fa-solid fa-scale-balanced"></i> Leading Legal & Islamic Jurisprudence Academy
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold font-serif leading-tight">
+              Shaping Legal Leaders <br><span class="text-iuGold">with Ethical Vision</span>
+            </h1>
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl leading-relaxed">
+              Synthesizing classic Islamic jurisprudence and contemporary legal studies at the oldest public law faculty established since the nation's independence.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <a href="#about" class="bg-iuGreen hover:bg-iuGreen-light border border-transparent text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition">
+                Explore Programs <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <button onclick="switchView('student')" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition">
+                <i class="fa-solid fa-sign-in-alt"></i> Portal Login
+              </button>
+            </div>
+          </div>
+          <!-- Hero Statistics Graphic / Interactive Widget -->
+          <div class="lg:col-span-5 relative hidden lg:block">
+            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-40 h-40 bg-iuGold/10 rounded-full"></div>
+              <h3 class="text-xl font-serif font-bold text-iuGold border-b border-white/10 pb-3 mb-4"><i class="fa-solid fa-medal mr-2"></i> Department at a Glance</h3>
+              <div class="grid grid-cols-2 gap-4 text-center">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                  <span class="block text-3xl font-extrabold text-white">2007</span>
+                  <span class="text-xs text-slate-300">Established</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                  <span class="block text-3xl font-extrabold text-white">412+</span>
+                  <span class="text-xs text-slate-300">IU Academic Staff</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                  <span class="block text-3xl font-extrabold text-white">100%</span>
+                  <span class="text-xs text-slate-300">Judiciary Success</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                  <span class="block text-3xl font-extrabold text-white">2,000+</span>
+                  <span class="text-xs text-slate-300">Global Al-Fiqh Alumni</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO & CHAIRMAN'S MESSAGE SECTION -->
+      <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Interactive Carousel/Tabs -->
+        <div class="space-y-6">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-iuGreen font-sans border-l-4 border-iuGold pl-2">Chairman's Welcome Message</span>
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-xl relative">
+            <i class="fa-solid fa-quote-left text-5xl text-iuGold-light/40 absolute top-4 left-4"></i>
+            <div class="relative z-10 space-y-4">
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed italic">
+                "Welcome to the prestigious Department of Al-Fiqh and Law. Our mandate is to equip upcoming scholars and legal practitioners with deep-seated knowledge in Islamic jurisprudence alongside standard statutory law systems. We prepare our alumni to lead with social integrity and global excellence."
+              </p>
+              <div class="flex items-center gap-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+                <img src="https://img.icons8.com/color/96/teacher.png" alt="Chairman Portrait" class="w-14 h-14 rounded-full border border-iuGold p-0.5">
+                <div>
+                  <h4 class="font-bold text-slate-800 dark:text-white">Prof. Dr. Muhammad Nazimuddin</h4>
+                  <p class="text-xs text-slate-500">Chairman, Dept. of Al-Fiqh and Law</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vision/Mission & Values accordion -->
+        <div class="space-y-6" id="vision">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-iuGreen font-sans border-l-4 border-iuGold pl-2">Our Vision & Mandate</span>
+          <div class="space-y-4">
+            <div class="p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+              <h4 class="font-bold text-base flex items-center gap-2 mb-2 text-iuGreen dark:text-iuGold">
+                <i class="fa-solid fa-eye text-sm"></i> Strategic Vision
+              </h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                To function as an international standard hub for teaching and comparative research integrating statutory law systems with Islamic legal philosophies.
+              </p>
+            </div>
+            <div class="p-5 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+              <h4 class="font-bold text-base flex items-center gap-2 mb-2 text-iuGreen dark:text-iuGold">
+                <i class="fa-solid fa-bullseye text-sm"></i> Departmental Mission
+              </h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Empower students through comprehensive critical reasoning, analytical skill acquisition, and hands-on professional litigation training inside our state-of-the-art Moot Court.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACADEMIC PROGRAMS -->
+      <section id="academics" class="bg-slate-100 dark:bg-slate-800/50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="text-center space-y-3">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-serif">Offered Degree Programs</h2>
+            <p class="text-slate-500 max-w-xl mx-auto">World-class syllabus matching bar certification requirements and Shariah criteria.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-block bg-iuGreen/10 text-iuGreen font-bold text-xs px-3 py-1 rounded-full">Undergraduate</span>
+                <h3 class="text-xl font-bold font-serif">LLB (Hons) in Al-Fiqh & Law</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">A standard 4-year curriculum spanning constitutional law, Islamic jurisprudence, civil/criminal procedure, and corporate policy.</p>
+              </div>
+              <button onclick="switchView('student')" class="mt-6 text-iuGreen dark:text-iuGold font-bold text-sm inline-flex items-center gap-1.5 hover:underline">Apply Now <i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-block bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300 font-bold text-xs px-3 py-1 rounded-full">Graduate</span>
+                <h3 class="text-xl font-bold font-serif">LLM in Comparative Jurisprudence</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">1-Year advanced research focus emphasizing legal analysis, human rights treaties, international finance laws, and Islamic civil codes.</p>
+              </div>
+              <button onclick="switchView('student')" class="mt-6 text-iuGreen dark:text-iuGold font-bold text-sm inline-flex items-center gap-1.5 hover:underline">Apply Now <i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-block bg-iuGold/10 text-iuGold-dark dark:text-iuGold font-bold text-xs px-3 py-1 rounded-full">Research</span>
+                <h3 class="text-xl font-bold font-serif">M.Phil & PhD Programs</h3>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Advanced academic tracks focusing on doctoral dissertations in modern constitutional reforms and classic Hanafi, Maliki, Shafi'i, and Hanbali theories.</p>
+              </div>
+              <button onclick="switchView('student')" class="mt-6 text-iuGreen dark:text-iuGold font-bold text-sm inline-flex items-center gap-1.5 hover:underline">Apply Now <i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FACULTY TEAM -->
+      <section id="faculty" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          <h2 class="text-3xl md:text-4xl font-extrabold font-serif">Our Distinguished Faculty</h2>
+          <p class="text-slate-500 max-w-xl mx-auto">Expert educators and practitioners published globally in comparative legal frameworks.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-lg hover:shadow-2xl transition">
+            <div class="bg-gradient-to-r from-iuGreen to-iuGreen-dark h-28 relative"></div>
+            <div class="px-6 pb-6 text-center -mt-12 relative z-10">
+              <img src="https://img.icons8.com/color/96/teacher.png" alt="Faculty" class="w-24 h-24 rounded-full mx-auto border-4 border-white bg-white shadow">
+              <h3 class="font-bold text-lg mt-3 text-slate-800 dark:text-white">Dr. Muhammad Nazimuddin</h3>
+              <p class="text-xs text-iuGold-dark dark:text-iuGold font-semibold">Professor & Chairman</p>
+              <p class="text-xs text-slate-400 mt-1">Research: Shariah Legal Foundations & Penal Law</p>
+              <div class="flex justify-center gap-3 mt-4 text-slate-400">
+                <a href="#" class="hover:text-iuGreen"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-iuGreen"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-lg hover:shadow-2xl transition">
+            <div class="bg-gradient-to-r from-iuGreen to-iuGreen-dark h-28 relative"></div>
+            <div class="px-6 pb-6 text-center -mt-12 relative z-10">
+              <img src="https://img.icons8.com/color/96/professor.png" alt="Faculty" class="w-24 h-24 rounded-full mx-auto border-4 border-white bg-white shadow">
+              <h3 class="font-bold text-lg mt-3 text-slate-800 dark:text-white">Prof. Dr. M. Abul Kalam Patwary</h3>
+              <p class="text-xs text-iuGold-dark dark:text-iuGold font-semibold">Founding Chairman & Professor</p>
+              <p class="text-xs text-slate-400 mt-1">Research: Comparative Civil Laws & Human Rights</p>
+              <div class="flex justify-center gap-3 mt-4 text-slate-400">
+                <a href="#" class="hover:text-iuGreen"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-iuGreen"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-lg hover:shadow-2xl transition">
+            <div class="bg-gradient-to-r from-iuGreen to-iuGreen-dark h-28 relative"></div>
+            <div class="px-6 pb-6 text-center -mt-12 relative z-10">
+              <img src="https://img.icons8.com/color/96/user-female-circle.png" alt="Faculty" class="w-24 h-24 rounded-full mx-auto border-4 border-white bg-white shadow">
+              <h3 class="font-bold text-lg mt-3 text-slate-800 dark:text-white">Farhana Sultana</h3>
+              <p class="text-xs text-iuGold-dark dark:text-iuGold font-semibold">Assistant Professor</p>
+              <p class="text-xs text-slate-400 mt-1">Research: Islamic Family Law Reform & Statutes</p>
+              <div class="flex justify-center gap-3 mt-4 text-slate-400">
+                <a href="#" class="hover:text-iuGreen"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-iuGreen"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTICES & EVENTS BOARD -->
+      <section id="notices" class="bg-slate-100 dark:bg-slate-800/50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Notices Section -->
+          <div class="lg:col-span-8 space-y-6">
+            <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-700 pb-3">
+              <h3 class="text-2xl font-bold font-serif flex items-center gap-2">
+                <i class="fa-solid fa-clipboard-list text-iuGreen"></i> Live Announcement Board
+              </h3>
+              <a href="#" class="text-xs font-bold text-iuGreen dark:text-iuGold hover:underline">View All</a>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-start gap-4">
+                <div class="bg-red-500 text-white p-3 rounded-lg text-center min-w-[55px]">
+                  <span class="block text-lg font-bold">12</span>
+                  <span class="block text-[10px] uppercase font-semibold">Aug</span>
+                </div>
+                <div class="space-y-1">
+                  <span class="inline-block bg-red-100 text-red-700 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">Urgent Announcement</span>
+                  <h4 class="font-bold hover:text-iuGreen cursor-pointer">Final Examination Routine Autumn-2026 Semester</h4>
+                  <p class="text-xs text-slate-400">All registered regular and supplementary status LLB candidates are requested to verify dates...</p>
+                </div>
+              </div>
+              <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-start gap-4">
+                <div class="bg-iuGreen text-white p-3 rounded-lg text-center min-w-[55px]">
+                  <span class="block text-lg font-bold">08</span>
+                  <span class="block text-[10px] uppercase font-semibold">Aug</span>
+                </div>
+                <div class="space-y-1">
+                  <span class="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">General Notice</span>
+                  <h4 class="font-bold hover:text-iuGreen cursor-pointer">Inaugural Legal Aid Clinic Counseling Class</h4>
+                  <p class="text-xs text-slate-400">Under the collaborative project with regional judges' offices, weekly counseling is now open...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Calendar / Events Widget -->
+          <div class="lg:col-span-4 space-y-6">
+            <h3 class="text-2xl font-bold font-serif border-b border-slate-200 dark:border-slate-700 pb-3">Upcoming Events</h3>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+              <ul class="space-y-4">
+                <li class="flex gap-4">
+                  <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg text-center h-12 w-12 flex flex-col justify-center">
+                    <span class="block text-xs font-bold">20</span>
+                    <span class="text-[9px] uppercase">Aug</span>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-bold">Annual Moot Court Competition 2026</h5>
+                    <p class="text-xs text-slate-400">Final trial simulator.</p>
+                  </div>
+                </li>
+                <li class="flex gap-4">
+                  <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg text-center h-12 w-12 flex flex-col justify-center">
+                    <span class="block text-xs font-bold">05</span>
+                    <span class="text-[9px] uppercase">Sep</span>
+                  </div>
+                  <div>
+                    <h5 class="text-sm font-bold">Shariah Jurisprudence Seminar</h5>
+                    <p class="text-xs text-slate-400">A comparative analysis of judicial acts.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXTRACURRICULAR ACTIVITIES -->
+      <section id="activities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          <h2 class="text-3xl md:text-4xl font-extrabold font-serif">Student Life & Facilities</h2>
+          <p class="text-slate-500 max-w-xl mx-auto">Beyond class lecture halls, we maintain premium legal centers for dynamic practical experience.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600" alt="Moot Court" class="h-48 w-full object-cover">
+            <div class="p-6 space-y-3">
+              <h4 class="font-bold text-lg flex items-center gap-2"><i class="fa-solid fa-gavel text-iuGold-dark"></i> Moot Court Society</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Simulate appellate practices and statutory trials under the mentoring of state judges.</p>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=600" alt="Legal Clinic" class="h-48 w-full object-cover">
+            <div class="p-6 space-y-3">
+              <h4 class="font-bold text-lg flex items-center gap-2"><i class="fa-solid fa-handshake-angle text-indigo-500"></i> Legal Aid Clinic</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Deliver clinical solutions and consulting to economically underserved citizens.</p>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=600" alt="Library" class="h-48 w-full object-cover">
+            <div class="p-6 space-y-3">
+              <h4 class="font-bold text-lg flex items-center gap-2"><i class="fa-solid fa-book-open text-emerald-500"></i> Digital Seminar Library</h4>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Access thousands of law reviews, international journals, and classical Shariah manuscripts.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==================== VIEW: STUDENT PORTAL ==================== -->
+    <div id="view-student" class="view-panel hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 animate-fade-in">
+      
+      <!-- Profile Welcome Bar -->
+      <div class="bg-gradient-to-r from-iuGreen to-iuGreen-dark p-6 md:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div class="flex items-center gap-4">
+          <img src="https://img.icons8.com/color/96/student-male.png" alt="Student Profile" class="w-16 h-16 rounded-full border-2 border-white bg-white">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold font-serif">Tariqul Islam Chowdhury</h2>
+            <p class="text-xs text-slate-200">Roll: 19105021 | Session: 2019-20 | Department of Al-Fiqh and Law</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="exportToPDF('student')" class="bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg text-xs font-semibold border border-white/20 transition flex items-center gap-1">
+            <i class="fa-solid fa-file-pdf"></i> Download Profile (PDF)
+          </button>
+          <button onclick="switchView('home')" class="bg-red-500/20 hover:bg-red-500/40 text-red-200 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-semibold transition">
+            <i class="fa-solid fa-power-off"></i> Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Layout Matrix -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Personal Dashboard and academic logs -->
+        <div class="lg:col-span-8 space-y-8" id="studentPDFContent">
+          <!-- GPA Graph & Statistics Card -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-line text-iuGreen"></i> Academic CGPA Progress</h3>
+            <div class="h-64">
+              <canvas id="cgpaChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Academic Status Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+              <span class="block text-slate-400 text-xs font-semibold">Active Enrolled Courses</span>
+              <span class="block text-2xl font-extrabold text-iuGreen mt-1">6 Courses</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+              <span class="block text-slate-400 text-xs font-semibold">Overall Attendance Status</span>
+              <span class="block text-2xl font-extrabold text-emerald-500 mt-1">89.4%</span>
+            </div>
+            <div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+              <span class="block text-slate-400 text-xs font-semibold">Current Semester CGPA</span>
+              <span class="block text-2xl font-extrabold text-iuGold-dark mt-1">3.82 / 4.00</span>
+            </div>
+          </div>
+
+          <!-- Course Registration & Routine -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4"><i class="fa-solid fa-book mr-2 text-iuGreen"></i> Current Semester Enrolled Courses</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm">
+                <thead>
+                  <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-400 uppercase text-[10px]">
+                    <th class="py-3 px-4">Course Code</th>
+                    <th class="py-3 px-4">Course Title</th>
+                    <th class="py-3 px-4">Credits</th>
+                    <th class="py-3 px-4">Instructor</th>
+                    <th class="py-3 px-4">Syllabus File</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-slate-100 dark:border-slate-800">
+                    <td class="py-3 px-4 font-bold text-iuGreen">AFL-3101</td>
+                    <td class="py-3 px-4 font-medium">Usul al-Fiqh (Islamic Jurisprudence Theory)</td>
+                    <td class="py-3 px-4">3.00</td>
+                    <td class="py-3 px-4">Dr. Muhammad Nazimuddin</td>
+                    <td class="py-3 px-4"><a href="#" class="text-xs text-iuGold-dark hover:underline"><i class="fa-solid fa-download"></i> Syllabus.pdf</a></td>
+                  </tr>
+                  <tr class="border-b border-slate-100 dark:border-slate-800">
+                    <td class="py-3 px-4 font-bold text-iuGreen">AFL-3103</td>
+                    <td class="py-3 px-4 font-medium">Comparative Civil Procedure & Legal Acts</td>
+                    <td class="py-3 px-4">3.00</td>
+                    <td class="py-3 px-4">Prof. Dr. Abul Kalam Patwary</td>
+                    <td class="py-3 px-4"><a href="#" class="text-xs text-iuGold-dark hover:underline"><i class="fa-solid fa-download"></i> Syllabus.pdf</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Sidebar alerts, administrative downloads -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md space-y-4">
+            <h3 class="text-lg font-bold font-serif text-slate-800 dark:text-white"><i class="fa-solid fa-circle-exclamation mr-1 text-amber-500"></i> Outstanding Actions</h3>
+            <div class="p-4 bg-amber-500/10 border border-amber-500/20 rounded-xl space-y-2">
+              <h4 class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase">Library Dues</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">1 Book overdue: "Constitutional Law of Bangladesh". Please return by Thursday.</p>
+            </div>
+            <div class="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl space-y-2">
+              <h4 class="text-xs font-bold text-purple-700 dark:text-purple-400 uppercase">Form Fill-up Open</h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Form Fill-up window for 3rd Year Final Exams closes soon. File online application below.</p>
+            </div>
+          </div>
+
+          <!-- Administrative Form Submissions -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md space-y-4">
+            <h3 class="text-lg font-bold font-serif"><i class="fa-solid fa-pen-to-square mr-1 text-iuGreen"></i> Online Applications</h3>
+            <form onsubmit="event.preventDefault(); alert('Your certificate application has been recorded in our system. Administrative staff will verify.');" class="space-y-3">
+              <div>
+                <label class="block text-xs font-semibold mb-1">Request Type</label>
+                <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-xs">
+                  <option>Transcript / Marks Certificate</option>
+                  <option>Character / Testimonial Certificate</option>
+                  <option>Class Attendance Correction Form</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1">Purpose of Request</label>
+                <textarea rows="3" placeholder="State reason, e.g., Bar Council Registration" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-xs" required></textarea>
+              </div>
+              <button type="submit" class="w-full bg-iuGreen text-white py-2 rounded-lg text-xs font-bold shadow-md hover:bg-iuGreen-light transition">
+                Submit Document Request
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== VIEW: FACULTY DASHBOARD ==================== -->
+    <div id="view-faculty" class="view-panel hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 animate-fade-in">
+      
+      <!-- Faculty Welcome Header -->
+      <div class="bg-gradient-to-r from-slate-900 to-iuGreen p-6 md:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div class="flex items-center gap-4">
+          <img src="https://img.icons8.com/color/96/teacher.png" alt="Faculty" class="w-16 h-16 rounded-full border-2 border-iuGold bg-white">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold font-serif">Prof. Dr. Muhammad Nazimuddin</h2>
+            <p class="text-xs text-iuGold">Chairman & Senior Professor, Faculty of Shariah & Law</p>
+          </div>
+        </div>
+        <button onclick="switchView('home')" class="bg-red-500/20 hover:bg-red-500/40 text-red-200 border border-red-500/30 px-4 py-2 rounded-lg text-xs font-semibold transition">
+          <i class="fa-solid fa-power-off"></i> Logout
+        </button>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Course Management Panel -->
+        <div class="lg:col-span-8 space-y-8">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md space-y-6">
+            <h3 class="text-lg font-bold font-serif border-b border-slate-100 dark:border-slate-700 pb-3">Course Management & Upload Resource</h3>
+            
+            <form onsubmit="event.preventDefault(); alert('Resource uploaded. Syncing with Student Portal.');" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold mb-1">Select Active Course</label>
+                <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs">
+                  <option>AFL-3101: Usul al-Fiqh (Theory)</option>
+                  <option>AFL-4105: Comparative Law Analysis</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1">Resource Category</label>
+                <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs">
+                  <option>Lecture Slide / Handout</option>
+                  <option>Assignment / Project Guide</option>
+                  <option>Midterm Exam Syllabus Supplement</option>
+                </select>
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-xs font-semibold mb-1">Document Title</label>
+                <input type="text" placeholder="e.g., Introduction to Qiyas Jurisprudence" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required>
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-xs font-semibold mb-1">Upload File (PDF or Document)</label>
+                <input type="file" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2 text-xs" required>
+              </div>
+              <div class="md:col-span-2">
+                <button type="submit" class="bg-iuGreen text-white px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-iuGreen-light transition">
+                  <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload & Broadcast
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Class Attendance Grid Tracker -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4 flex justify-between items-center">
+              <span><i class="fa-solid fa-user-check mr-1 text-iuGreen"></i> Fast Attendance Tracker</span>
+              <span class="text-xs text-slate-400">Date: Today</span>
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead>
+                  <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-400 uppercase text-[10px]">
+                    <th class="py-2.5">Roll</th>
+                    <th>Name</th>
+                    <th>Session</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-slate-100 dark:border-slate-800">
+                    <td class="py-2.5 font-bold">19105021</td>
+                    <td class="font-medium">Tariqul Islam Chowdhury</td>
+                    <td>2019-20</td>
+                    <td>
+                      <button onclick="toggleAttendance(this)" class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-[10px] tracking-wide">PRESENT</button>
+                    </td>
+                  </tr>
+                  <tr class="border-b border-slate-100 dark:border-slate-800">
+                    <td class="py-2.5 font-bold">19105022</td>
+                    <td class="font-medium">Kamruzzaman Sumon</td>
+                    <td>2019-20</td>
+                    <td>
+                      <button onclick="toggleAttendance(this)" class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-[10px] tracking-wide">PRESENT</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faculty Sidebar Actions -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4"><i class="fa-solid fa-calendar mr-1 text-iuGold-dark"></i> Office Hours & Advising</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg">
+                <span class="text-xs font-bold">Sunday, Tuesday</span>
+                <span class="text-xs text-iuGreen font-semibold">10:00 AM - 12:00 PM</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg">
+                <span class="text-xs font-bold">Wednesday</span>
+                <span class="text-xs text-iuGreen font-semibold">01:30 PM - 03:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== VIEW: ALUMNI PORTAL ==================== -->
+    <div id="view-alumni" class="view-panel hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 animate-fade-in">
+      
+      <!-- Banner/Header -->
+      <div class="text-center space-y-3">
+        <h2 class="text-3xl md:text-4xl font-extrabold font-serif">Al-Fiqh and Law Alumni Networking Hub</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Connecting global professionals, judges, advocates, and academia graduating from Islamic University.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Registration/Profile Section -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4"><i class="fa-solid fa-graduation-cap text-indigo-500"></i> Join Alumni Association</h3>
+            <form onsubmit="event.preventDefault(); alert('Registration pending approval of Department Alumni Committee.');" class="space-y-3">
+              <div>
+                <label class="block text-xs font-semibold mb-1">Full Name</label>
+                <input type="text" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1">Degree Received & Graduation Year</label>
+                <div class="grid grid-cols-2 gap-2">
+                  <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs">
+                    <option>LLB (Hons)</option>
+                    <option>LLM</option>
+                  </select>
+                  <input type="number" placeholder="Year" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1">Current Job Title</label>
+                <input type="text" placeholder="e.g., Assistant Judge / Advocate" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1">Professional Verification Document URL</label>
+                <input type="url" placeholder="e.g., Portfolio link, Bar membership record" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required>
+              </div>
+              <button type="submit" class="w-full bg-indigo-600 text-white py-2.5 rounded-lg text-xs font-bold hover:bg-indigo-700 transition">
+                Register & Verify Profile
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Directory search and career board -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-magnifying-glass text-indigo-500"></i> Global Directory Search
+            </h3>
+            <div class="flex gap-2">
+              <input type="text" onkeyup="searchAlumni(this.value)" placeholder="Search directory by designation, graduation year, or location..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-3 text-xs">
+            </div>
+
+            <!-- Alumni Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6" id="alumniList">
+              <div class="p-4 border border-slate-100 dark:border-slate-700 rounded-xl space-y-2">
+                <div class="flex items-center gap-3">
+                  <img src="https://img.icons8.com/color/48/teacher-male.png" alt="Alumni" class="w-10 h-10 rounded-full">
+                  <div>
+                    <h4 class="font-bold text-sm">Barrister Masum Billah</h4>
+                    <span class="text-[10px] text-indigo-500 font-bold uppercase">LL.B Hons, Session 2008</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-500">Currently serving as Senior Legal Counsel at High Court Division, Supreme Court of Bangladesh.</p>
+              </div>
+              <div class="p-4 border border-slate-100 dark:border-slate-700 rounded-xl space-y-2">
+                <div class="flex items-center gap-3">
+                  <img src="https://img.icons8.com/color/48/teacher-female.png" alt="Alumni" class="w-10 h-10 rounded-full">
+                  <div>
+                    <h4 class="font-bold text-sm">Most. Fahmida Sultana</h4>
+                    <span class="text-[10px] text-indigo-500 font-bold uppercase">LL.B Hons, Session 2012</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-500">Currently serving as Senior Assistant Judicial Officer (Judge) at District Court, Kushtia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== VIEW: ADMIN PANEL ==================== -->
+    <div id="view-admin" class="view-panel hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 animate-fade-in">
+      
+      <!-- Admin stats/summary -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+          <span class="text-slate-400 text-xs font-semibold">Total Students</span>
+          <span class="block text-3xl font-extrabold text-iuGreen mt-1">480 Enrolled</span>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+          <span class="text-slate-400 text-xs font-semibold">Unverified Alumni</span>
+          <span class="block text-3xl font-extrabold text-amber-500 mt-1">14 Pending</span>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+          <span class="text-slate-400 text-xs font-semibold">System Server Health</span>
+          <span class="block text-3xl font-extrabold text-emerald-500 mt-1">99.98%</span>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm text-center">
+          <span class="text-slate-400 text-xs font-semibold">Active Announcements</span>
+          <span class="block text-3xl font-extrabold text-indigo-500 mt-1">11 Live</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- System Control Center -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-sliders text-iuGreen"></i> System Controls & Announcements
+            </h3>
+            <form onsubmit="event.preventDefault(); alert('Notice successfully broadcasted across website & student notifications.');" class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold mb-1">Announcement Title</label>
+                  <input type="text" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold mb-1">Target Portal Audience</label>
+                  <select class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs">
+                    <option>Global (Public Website & Student Portal)</option>
+                    <option>Strictly Students Only</option>
+                    <option>Strictly Faculty Only</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold mb-1">Detailed Document Body</label>
+                <textarea rows="4" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2.5 text-xs" required></textarea>
+              </div>
+              <button type="submit" class="bg-iuGreen text-white px-6 py-2.5 rounded-lg text-xs font-bold hover:bg-iuGreen-light transition">
+                Publish Announcement
+              </button>
+            </form>
+          </div>
+
+          <!-- Activity log feed -->
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md">
+            <h3 class="text-lg font-bold font-serif mb-4"><i class="fa-solid fa-clock-rotate-left mr-1"></i> System Activity Logs</h3>
+            <div class="space-y-3" id="adminActivityLogs">
+              <div class="flex justify-between items-center text-xs border-b border-slate-100 dark:border-slate-700 pb-2">
+                <span><i class="fa-solid fa-key mr-2 text-green-500"></i> User <strong>19105021</strong> logged into Student Portal</span>
+                <span class="text-slate-400">Just Now</span>
+              </div>
+              <div class="flex justify-between items-center text-xs border-b border-slate-100 dark:border-slate-700 pb-2">
+                <span><i class="fa-solid fa-cloud-arrow-up mr-2 text-blue-500"></i> Faculty <strong>Dr. Muhammad Nazimuddin</strong> uploaded midterm routine</span>
+                <span class="text-slate-400">1 hour ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Theme Customization & Admin Config Sidebar -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md space-y-4">
+            <h3 class="text-lg font-bold font-serif"><i class="fa-solid fa-palette text-iuGold-dark"></i> Theme Configuration</h3>
+            <p class="text-xs text-slate-400">Directly sync changes with website visual interface rendering properties.</p>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="setSystemColor('#006a4e')" class="flex items-center justify-center gap-1.5 p-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs rounded-lg font-bold">
+                <span class="w-3.5 h-3.5 bg-[#006a4e] rounded-full inline-block"></span> Green
+              </button>
+              <button onclick="setSystemColor('#0a4e80')" class="flex items-center justify-center gap-1.5 p-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs rounded-lg font-bold">
+                <span class="w-3.5 h-3.5 bg-[#0a4e80] rounded-full inline-block"></span> Blue
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== UTILITY WIDGETS ==================== -->
+
+  <!-- GLOBAL SEARCH MODAL -->
+  <div id="searchModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-start justify-center pt-24 px-4 hidden">
+    <div class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden">
+      <div class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+        <div class="flex items-center gap-3 w-full">
+          <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+          <input type="text" onkeyup="executeGlobalSearch(this.value)" placeholder="Search documents, notices, students, faculty..." class="bg-transparent text-sm w-full outline-none" id="globalSearchInput">
+        </div>
+        <button onclick="toggleSearch()" class="text-xs font-bold text-slate-400 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 p-1.5 rounded-lg"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-4 max-h-96 overflow-y-auto space-y-3" id="searchResults">
+        <p class="text-xs text-slate-400">Type something to search our academic directory database...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI ACADEMIC CHATBOT WIDGET -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <!-- Chat Toggle Button -->
+    <button onclick="toggleAIChat()" class="bg-iuGreen hover:bg-iuGreen-light text-white p-4 rounded-full shadow-2xl transition duration-300 relative flex items-center justify-center hover:scale-105 active:scale-95 group">
+      <i class="fa-solid fa-robot text-xl"></i>
+      <span class="absolute right-full mr-2 px-2.5 py-1 text-xs font-bold bg-slate-800 text-white rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap">AI Assistant</span>
+    </button>
+    <!-- Chat Window Panel -->
+    <div id="aiChatWindow" class="absolute bottom-16 right-0 bg-white dark:bg-slate-800 w-80 md:w-96 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden hidden flex-col h-[450px]">
+      <div class="bg-gradient-to-r from-iuGreen to-iuGreen-dark p-4 text-white flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-robot"></i>
+          <div>
+            <h4 class="font-bold text-xs">Al-Fiqh Academic AI</h4>
+            <span class="text-[9px] text-emerald-300 font-semibold uppercase">Operational & Live</span>
+          </div>
+        </div>
+        <button onclick="toggleAIChat()" class="text-white hover:text-slate-200"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <!-- Message history container -->
+      <div class="p-4 overflow-y-auto flex-grow space-y-3 text-xs" id="chatMessageHistory">
+        <div class="bg-slate-100 dark:bg-slate-700 p-2.5 rounded-lg max-w-[85%]">
+          Assalamu Alaikum! I am your AI assistant for the Department of Al-Fiqh & Law. How can I support you today?
+        </div>
+      </div>
+      <!-- Input bar -->
+      <div class="p-3 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 flex gap-2">
+        <input type="text" id="chatInput" placeholder="Ask AI: admission, classes, syllabus..." class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-xs outline-none">
+        <button onclick="sendChatMessage()" class="bg-iuGreen text-white px-3 rounded-lg"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 border-t border-slate-800 text-slate-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-4">
+        <h4 class="text-lg font-serif font-bold text-white">Department of Al-Fiqh & Law</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Islamic University, Kushtia-7003, Bangladesh. Synthesizing comparative judicial practices alongside classic Islamic Jurisprudence Shariah systems.
+        </p>
+      </div>
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-iuGold">Quick Links</h4>
+        <ul class="text-xs space-y-2">
+          <li><a href="#about" class="hover:text-iuGold transition">About Us</a></li>
+          <li><a href="#academics" class="hover:text-iuGold transition">Degree Programs</a></li>
+          <li><a href="#faculty" class="hover:text-iuGold transition">Faculty Roster</a></li>
+          <li><a href="#notices" class="hover:text-iuGold transition">Announcements</a></li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-iuGold">Contact Coordinates</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          <strong>Location:</strong> Faculty of Law building, Islamic University campus, Kushtia, Bangladesh.<br>
+          <strong>Tel:</strong> +880-71-74901-12 Ext. 2531<br>
+          <strong>Email:</strong> chairman@fiqh.iu.ac.bd
+        </p>
+      </div>
+      <div class="space-y-4">
+        <h4 class="text-sm font-bold uppercase tracking-wider text-iuGold">Newsletter Subscription</h4>
+        <form onsubmit="event.preventDefault(); alert('Subscribed successfully.');" class="space-y-2">
+          <input type="email" placeholder="Email Address" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs outline-none focus:border-iuGold text-white" required>
+          <button type="submit" class="w-full bg-iuGreen hover:bg-iuGreen-light text-white font-semibold p-2 rounded-lg text-xs transition">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+      <p>&copy; 2026 Islamic University, Kushtia, Bangladesh. All rights reserved. Developed in alignment with ICT Cell guidelines.</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC LOGIC SCRIPT -->
+  <script>
+    // --- GLOBAL ROUTER SCRIPT ---
+    function switchView(viewId) {
+      document.querySelectorAll('.view-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      const targetPanel = document.getElementById('view-' + viewId);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      // Re-initialize Charts conditionally when dashboards load
+      if (viewId === 'student') {
+        renderStudentGPAChart();
+      }
+    }
+
+    // --- DARK MODE LOGIC ---
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    // --- MOBILE NAV PANEL CONTROLS ---
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('hidden');
+    }
+
+    // --- LANGUAGE TOGGLER ---
+    let currentLang = 'en';
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'bn' : 'en';
+      document.getElementById('langLabel').textContent = currentLang === 'en' ? 'বাংলা' : 'English';
+      // Language properties update logically dynamically
+      if (currentLang === 'bn') {
+        document.querySelector('h1').innerHTML = "নৈতিক দূরদর্শিতায় <br><span class='text-iuGold'>আইনি নেতৃত্ব গড়ে তোলা</span>";
+      } else {
+        document.querySelector('h1').innerHTML = "Shaping Legal Leaders <br><span class='text-iuGold'>with Ethical Vision</span>";
+      }
+    }
+
+    // --- GLOBAL SEARCH MODAL ENGINE ---
+    function toggleSearch() {
+      const modal = document.getElementById('searchModal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        document.getElementById('globalSearchInput').focus();
+      }
+    }
+
+    const searchableDatabase = [
+      { title: "Usul al-Fiqh Course Syllabus", category: "Course", url: "#academics" },
+      { title: "Admission Test Requirements 2026/27", category: "Admission", url: "#notices" },
+      { title: "Dr. Muhammad Nazimuddin - Profile", category: "Faculty", url: "#faculty" },
+      { title: "Moot Court Annual Competition Registration", category: "Event", url: "#activities" }
+    ];
+
+    function executeGlobalSearch(query) {
+      const resultsContainer = document.getElementById('searchResults');
+      resultsContainer.innerHTML = '';
+      if (!query.trim()) {
+        resultsContainer.innerHTML = '<p class="text-xs text-slate-400">Type something to search our database...</p>';
+        return;
+      }
+      const filtered = searchableDatabase.filter(item => item.title.toLowerCase().includes(query.toLowerCase()));
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<p class="text-xs text-red-500">No results found matching search criteria.</p>';
+        return;
+      }
+      filtered.forEach(item => {
+        const div = document.createElement('div');
+        div.className = "p-3 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-lg flex justify-between items-center";
+        div.innerHTML = `
+          <div>
+            <h4 class="font-bold text-xs">${item.title}</h4>
+            <span class="text-[9px] uppercase font-bold text-iuGold-dark dark:text-iuGold">${item.category}</span>
+          </div>
+          <a href="${item.url}" onclick="toggleSearch()" class="text-xs font-bold text-iuGreen hover:underline">Explore <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+        `;
+        resultsContainer.appendChild(div);
+      });
+    }
+
+    // Keyboard Shortcuts for Search (Ctrl + K)
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleSearch();
+      }
+    });
+
+    // --- AI ACADEMIC CHATBOT SYSTEM ---
+    function toggleAIChat() {
+      const win = document.getElementById('aiChatWindow');
+      win.classList.toggle('hidden');
+    }
+
+    const aiKnowledgeBase = {
+      "admission": "Admission requirements for LLB (Hons) include high scores in HSC/Alim and a passing rank in the Islamic University Faculty admission exam.",
+      "chairman": "Prof. Dr. Muhammad Nazimuddin is the current Chairman of the Department of Al-Fiqh and Law.",
+      "contact": "You can reach the department office at chairman@fiqh.iu.ac.bd.",
+      "moot court": "The department features a Moot Court Society for hands-on courtroom simulations."
+    };
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim().toLowerCase();
+      if (!text) return;
+
+      const history = document.getElementById('chatMessageHistory');
+      
+      // Append user bubble
+      const userBubble = document.createElement('div');
+      userBubble.className = "bg-iuGreen text-white p-2.5 rounded-lg max-w-[85%] ml-auto text-right";
+      userBubble.textContent = input.value;
+      history.appendChild(userBubble);
+      
+      input.value = '';
+
+      // Determine match response
+      let replyText = "I apologize, but I only hold basic academic info at this phase. Please drop an official email to chairman@fiqh.iu.ac.bd for specialized answers.";
+      for (let key in aiKnowledgeBase) {
+        if (text.includes(key)) {
+          replyText = aiKnowledgeBase[key];
+          break;
+        }
+      }
+
+      // Append AI reply bubble with delay
+      setTimeout(() => {
+        const aiBubble = document.createElement('div');
+        aiBubble.className = "bg-slate-100 dark:bg-slate-700 p-2.5 rounded-lg max-w-[85%]";
+        aiBubble.textContent = replyText;
+        history.appendChild(aiBubble);
+        history.scrollTop = history.scrollHeight;
+      }, 500);
+    }
+
+    // --- CHART IMPLEMENTATIONS ---
+    let gpaChartInstance = null;
+    function renderStudentGPAChart() {
+      const ctx = document.getElementById('cgpaChart');
+      if (!ctx) return;
+      if (gpaChartInstance) gpaChartInstance.destroy();
+      gpaChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['1st Sem', '2nd Sem', '3rd Sem', '4th Sem', '5th Sem', '6th Sem'],
+          datasets: [{
+            label: 'Semester GPA Status',
+            data: [3.65, 3.72, 3.80, 3.75, 3.88, 3.82],
+            borderColor: '#006a4e',
+            backgroundColor: 'rgba(0, 106, 78, 0.1)',
+            borderWidth: 3,
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: { min: 2.0, max: 4.0 }
+          }
+        }
+      });
+    }
+
+    // --- ATTENDANCE SYSTEM CONTROLLER ---
+    function toggleAttendance(btn) {
+      if (btn.textContent === "PRESENT") {
+        btn.textContent = "ABSENT";
+        btn.className = "bg-red-100 text-red-800 px-3 py-1 rounded-full font-bold text-[10px] tracking-wide";
+      } else {
+        btn.textContent = "PRESENT";
+        btn.className = "bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-[10px] tracking-wide";
+      }
+    }
+
+    // --- ADMINISTRATIVE THEME SWAPPER ---
+    function setSystemColor(hex) {
+      document.documentElement.style.setProperty('--iu-primary-color', hex);
+      alert('System primary visual tone updated. Applied variables across the interface.');
+    }
+
+    // --- EXPORT TO PDF TOOL ---
+    function exportToPDF(viewId) {
+      const element = document.getElementById(viewId + 'PDFContent');
+      if (!element) return;
+      const opt = {
+        margin:       10,
+        filename:     'Academic_Status_Report_IU_Al_Fiqh.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+
+    // --- ALUMNI DIRECTORY SEARCH ---
+    function searchAlumni(query) {
+      const items = document.querySelectorAll('#alumniList > div');
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(query.toLowerCase())) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
